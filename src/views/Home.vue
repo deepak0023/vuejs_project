@@ -2,16 +2,18 @@
   <div class="home">
     <div v-if="tasks.length">
       <div v-for="task in tasks" :key="task.id">
-        <p>{{ task.title }}</p>
+        <SingleTask :task="task" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import SingleTask from "../components/SingleTask.vue";
+
 export default {
   name: "HomeView",
-  components: {},
+  components: { SingleTask },
   data() {
     return {
       tasks: [],

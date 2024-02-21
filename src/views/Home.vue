@@ -2,7 +2,11 @@
   <div class="home">
     <div v-if="tasks.length">
       <div v-for="task in tasks" :key="task.id">
-        <SingleTask :task="task" @delete="handleDelete" />
+        <SingleTask
+          :task="task"
+          @delete="handleDelete"
+          @complete="handleComplete"
+        />
       </div>
     </div>
   </div>
@@ -33,6 +37,12 @@ export default {
       this.tasks = this.tasks.filter((task) => {
         return task.id !== id;
       });
+    },
+    handleComplete(id) {
+      let t = this.tasks.find((task) => {
+        return task.id === id;
+      });
+      t.complete = !t.complete;
     },
   },
 };

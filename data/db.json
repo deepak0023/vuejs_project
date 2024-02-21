@@ -15,8 +15,8 @@
     {
       "id": "1cab",
       "title": "Task 3",
-      "details": "abc",
-      "complete": false
+      "details": "abc abc",
+      "complete": true
     },
     {
       "id": "b295",

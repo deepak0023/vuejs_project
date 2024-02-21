@@ -3,7 +3,7 @@
     <div class="actions">
       <h3 @click="showDetails = !showDetails">{{ task.title }}</h3>
       <div class="icons">
-        <span class="material-icons">delete</span>
+        <span @click="deleteTask" class="material-icons">delete</span>
         <span class="material-icons">edit</span>
         <span class="material-icons tick">done</span>
       </div>
@@ -20,7 +20,16 @@ export default {
   data() {
     return {
       showDetails: false,
+      uri: "http://localhost:3000/tasks/" + this.task.id,
     };
+  },
+  methods: {
+    deleteTask() {
+      console.log("Came here");
+      fetch(this.uri, { method: "DELETE" })
+        .then(() => this.$emit("delete", this.task.id))
+        .catch((err) => console.log(err));
+    },
   },
 };
 </script>

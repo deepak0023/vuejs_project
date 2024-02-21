@@ -1,7 +1,8 @@
 <template>
   <div class="home">
+    <FilterNav :current="current" @filterChange="current = $event" />
     <div v-if="tasks.length">
-      <div v-for="task in tasks" :key="task.id">
+      <div v-for="task in filteredTasks" :key="task.id">
         <SingleTask
           :task="task"
           @delete="handleDelete"
@@ -14,13 +15,15 @@
 
 <script>
 import SingleTask from "../components/SingleTask.vue";
+import FilterNav from "../components/FilterNav.vue";
 
 export default {
   name: "HomeView",
-  components: { SingleTask },
+  components: { SingleTask, FilterNav },
   data() {
     return {
       tasks: [],
+      current: "all",
     };
   },
   mounted() {
@@ -43,6 +46,17 @@ export default {
         return task.id === id;
       });
       t.complete = !t.complete;
+    },
+  },
+  computed: {
+    filteredTasks() {
+      if (this.current === "completed") {
+        return this.tasks.filter((task) => task.complete);
+      }
+      if (this.current === "ongoing") {
+        return this.tasks.filter((task) => !task.complete);
+      }
+      return this.tasks;
     },
   },
 };

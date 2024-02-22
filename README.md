@@ -27,5 +27,13 @@ npm run build
 # Jsonp Settings
 
 Run the following command for run jsonp server for the provided data
+```
+npx json-server --watch data/db.json --port= (available-port)
+```
 
-### `npx json-server --watch data/db.json --port= (available-port)
+### Application deployed in the following url :
+
+```
+https://cute-torte-dc506a.netlify.app/ (Vue Js)
+https://mock-server-6iau.onrender.com/tasks (Backend API)
+```

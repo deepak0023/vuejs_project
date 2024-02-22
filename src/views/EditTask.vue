@@ -13,7 +13,7 @@ export default {
   props: ["id"],
   data() {
     return {
-      uri: "http://localhost:3000/tasks/" + this.id,
+      uri: "https://mock-server-6iau.onrender.com/tasks/" + this.id,
       title: "",
       details: "",
     };

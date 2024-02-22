@@ -27,7 +27,7 @@ export default {
     };
   },
   mounted() {
-    fetch("http://localhost:3000/tasks")
+    fetch("https://mock-server-6iau.onrender.com/tasks")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

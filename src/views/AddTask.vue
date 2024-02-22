@@ -25,7 +25,7 @@ export default {
       };
       console.log(task);
 
-      fetch("http://localhost:3000/tasks", {
+      fetch("https://mock-server-6iau.onrender.com/tasks", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(task),

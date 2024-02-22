@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       showDetails: false,
-      uri: "http://localhost:3000/tasks/" + this.task.id,
+      uri: "https://mock-server-6iau.onrender.com/tasks/" + this.task.id,
     };
   },
   methods: {

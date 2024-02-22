@@ -1,4 +1,10 @@
 # task-planner
+## App functionality
+- List task
+- Add task
+- Update task (update to complete or pending)
+- Delete task
+- Filter task based on completion 
 
 ## Project setup
 
@@ -18,12 +24,8 @@ npm run serve
 npm run build
 ```
 
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
 # Jsonp Settings
 
 Run the following command for run jsonp server for the provided data
 
-### `npx json-server --watch data/db.json --port=<available-port>
+### `npx json-server --watch data/db.json --port= (available-port)
